@@ -26,8 +26,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+STATIC_DIR = os.path.join(BASE_DIR, "static")
+
 # Serve static files
-app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
 # Load the trained segmentation model
 MODEL_CACHE = {}
@@ -48,20 +51,20 @@ CATEGORY_LABELS = {
     4: "Water"
 }
 
-CSV_DIRECTORY = "csv_files"
+CSV_DIRECTORY = os.path.join(BASE_DIR, "csv_files")
 os.makedirs(CSV_DIRECTORY, exist_ok=True)
 
 # Define TIFF files and their boundaries
 TIFF_FILES = [
     {
-        "file": "static/Advanceddtiff.tif",
+        "file": "../static/Advanceddtiff.tif",
         "bounds": [(85.3330463, 27.6336405), (85.3454091, 27.6481854)],
-        "model": "model/model_epoch_h200.h5"
+        "model": "../Model/model_epoch_h200.h5"
     },
     {
-        "file": "static/advance.tif",
+        "file": "../static/advance.tif",
         "bounds": [(85.2858866, 27.6838582), (85.2936236, 27.6914596)],
-        "model": "model/model_epoch_100.h5"
+        "model": "../Model/model_epoch_100.h5"
     }
 ]
 
