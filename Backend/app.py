@@ -56,12 +56,12 @@ TIFF_FILES = [
     {
         "file": "static/Advanceddtiff.tif",
         "bounds": [(85.3330463, 27.6336405), (85.3454091, 27.6481854)],
-        "model": "model/model_epoch_h200.h5"
+        "model": "Model/model_epoch_h200.h5"
     },
     {
         "file": "static/advance.tif",
         "bounds": [(85.2858866, 27.6838582), (85.2936236, 27.6914596)],
-        "model": "model/model_epoch_100.h5"
+        "model": "Model/model_epoch_100.h5"
     }
 ]
 
