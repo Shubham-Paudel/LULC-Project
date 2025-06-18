@@ -313,3 +313,4 @@ async def download_zip():
         raise HTTPException(status_code=500, detail=f"Error creating ZIP file: {str(e)}")
 
     return FileResponse(zip_path, media_type="application/zip", filename=zip_filename)
+
