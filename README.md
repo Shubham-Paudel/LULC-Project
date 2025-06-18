@@ -3,7 +3,7 @@
 
 This is an end-to-end AI-powered platform for automating **Land Use and Land Cover (LULC)** classification using high-resolution drone-captured imagery. It combines deep learning (U-Net) and geospatial web technologies to perform real-time interactive segmentation and statistical analysis of land types.
 
-> 📍 **Study Area:** Harisiddhi, Lalitpur, Nepal  
+> 📍 **Study Area:** Harisiddhi, Lalitpur, Nepal and Advanced College of Engineering and Management, Balkhu, Kathmandu, Nepal 
 > 🎓 **Developed as:** Major Project for B.E. in Electronics, Communication and Information Engineering  
 > 🏫 **College:** Advanced College of Engineering and Management, Tribhuvan University
 
