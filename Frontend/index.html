@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Land Use and Land Cover Analysis</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   </head>
+<body>
+    <h2>Land Use and Land Cover Analysis</h2>
+
+    <!-- Cropping Window -->
+    <div id="cropping-window" class="window active">
+        <p><strong>Use the rectangle tool to select an area on the map.</strong></p>
+        <div id="map"></div>
+        <button id="clear-selection" class="btn-clear">❌ Clear Selection</button>
+    	<button id="recenter-map" class="btn-recenter">🔄 Recenter Map</button>
+    	<button id="go-to-prediction" class="btn-primary">Run Prediction</button>
+    </div>
+
+    <!-- Prediction Window -->
+    <div id="prediction-window" class="window">
+       <div id="loading-overlay">
+    	<div class="loading-container">
+        	<div class="spinner"></div>
+        <p>Processing Prediction... Please wait</p>
+    </div>
+</div>
+
+
+        <div class="results-container">
+            <div class="image-container">
+                <h4>User Selected Area</h4>
+                <img id="cropped-image" alt="Cropped Image" />
+            </div>
+            <div class="image-container">
+                <h4>Corresponding Segmentation Mask</h4>
+                <img id="segmentation-mask" alt="Segmentation Mask" />
+            </div>
+        </div>
+        <div class="legend-container">
+            <h4>Legend</h4>
+            <div class="legend-items">
+                <div class="legend-item">
+                    <div class="legend-color" style="background: rgb(255, 162, 0);"></div>
+                    <span>Bareland</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: rgb(255, 13, 0);"></div>
+                    <span>Building</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: rgb(160, 32, 240);"></div>
+                    <span>Road</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: rgb(18, 107, 0);"></div>
+                    <span>Vegetation</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: rgb(0, 110, 255);"></div>
+                    <span>Water</span>
+                </div>
+            </div>
+        </div>
+       <!-- Full-width overlapped image container -->
+<div class="full-width-container">
+    <h4>Cropped Image with Overlapped Segmentation Mask</h4>
+    <img id="blended-image" alt="Blended Image" />
+</div>
+        <div>
+            <table id="area-table"></table>
+        <button id="download-images" class="btn-secondary">Download Results in ZIP</button>
+        </div>
+        <canvas id="pie-chart"></canvas>
+        <button id="back-to-cropping" class="btn-orange">Back to Area Selection</button>
+    </div>
+ <script src="script.js"></script>
+    
+</body>
+</html>

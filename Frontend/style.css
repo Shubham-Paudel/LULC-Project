@@ -1,0 +1,250 @@
+body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f9ff; /* Light sky blue */
+            color: #333;
+        }
+        h2 {
+            background-color: #0983F6; /* Sky blue */
+            color: white;
+            padding: 15px 10px;
+            text-align: center;
+            margin: 0;
+            font-size: 26px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .window {
+            display: none;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+            overflow-x: hidden;
+        }
+        .active {
+            display: block;
+        }
+        #map {
+            height: 600px;
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+	#loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f4f9ff; /* Light blue matching your theme */
+    z-index: 1000;
+    display: none; /* Initially hidden */
+    justify-content: center;
+    align-items: center;
+}
+
+#loading-overlay .loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 250px;
+    padding: 30px;
+    text-align: center;
+    background: white; /* White box for better contrast */
+    border: 2px solid #0983F6; /* Vibrant blue border */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+#loading-overlay .spinner {
+    width: 80px;
+    height: 80px;
+    border: 8px solid rgba(0, 0, 255, 0.2); /* Light transparent blue */
+    border-top: 8px solid #0983F6; /* Vibrant blue spinner */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#loading-overlay .loading-container p {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #0983F6; /* Matches the blue theme */
+    margin-top: 10px;
+}
+
+        .results-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .results-container .image-container {
+            text-align: center;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+     .results-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns for the top two images */
+    gap: 20px; /* Spacing between the top two containers */
+    margin: 0 auto; /* Center the grid */
+    align-items: center; /* Align vertically */
+    max-width: 1200px; /* Adjust to your preferred max width */
+}
+
+.image-container, .full-width-container {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.full-width-container {
+    grid-column: span 2; /* Make the full-width container span both columns */
+    margin: 20px 0 0 0; /* Remove gaps above and make spacing consistent */
+    padding: 20px; /* Add padding for consistency */
+    max-width: 1200px; /* Adjust to match the width of the top containers */
+}
+
+.image-container img, .full-width-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.image-container h4, .full-width-container h4 {
+    color: #0983F6;
+    margin-bottom: 10px;
+}
+
+
+
+        .results-container .image-container h4 {
+            margin-bottom: 10px;
+            color: #0983F6;
+        }
+        .results-container img {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .legend-container {
+            margin: 20px auto;
+            padding: 15px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .legend-items {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border: 1px solid #000;
+            border-radius: 4px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        table th {
+            background: #0983F6;
+            color: white;
+        }
+        button {
+            border: none;
+            padding: 10px 20px;
+            margin: 10px 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+        .btn-primary {
+            background: #0983F6;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+	.btn-clear{
+	    background: #cd5147;
+	    color: white;
+	    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+	}
+        .btn-primary:hover {
+            background: #006bb7;
+        }
+
+	.btn-recenter{
+	    background: #6dafeb;
+	    color: white;
+	    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+	.btn-clear:hover{
+	    background: #913830;
+	}
+
+	.btn-recenter:hover{
+	    background: #578cbd;
+	}
+
+        .btn-primary:hover {
+            background: #006bb7;
+        }
+	.btn-secondary{
+	    background: #4ba54e;
+	    color: white;
+	    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+	}
+
+        .btn-secondary:hover {
+            background: #3e8e41;
+        }
+        .btn-orange {
+            background: #FFA500;
+            color: white;
+        }
+        .btn-orange:hover {
+            background: #e59400;
+        }
+        canvas {
+            margin: auto;
+            max-width: 400px; /* Original size for the pie chart */
+            display: block;
+        }
