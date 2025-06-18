@@ -97,16 +97,6 @@ This system allows users to:
 
 ---
 
-## 📊 Example Output
+## Additional Resources
 
-| Input | Mask | Analysis |
-|-------|------|----------|
-| ![](examples/input.jpg) | ![](examples/mask.jpg) | ![](examples/chart.png) |
-
-```csv
-Class, Pixels, Area (ha), Percentage
-Bareland, 180942, 3.51, 45.7%
-Buildings, 102000, 1.98, 25.7%
-Vegetation, 75000, 1.45, 18.2%
-Roads, 31200, 0.61, 7.9%
-Water, 12000, 0.23, 2.5%
+For the static folder here is the link https://drive.google.com/drive/folders/1YykOcfThE6ftLRhTu8DEEZiQlUSu5Gon?usp=sharing
